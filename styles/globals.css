@@ -1,38 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Full-page outdoor background (no white gaps) */
 html, body {
   height: 100%;
-  background-image: url('/bg.svg');
-  background-size: 400px 400px;  /* change to 'cover' if you use a photo */
-  background-repeat: repeat;
+  background-image: url('/bg.jpg');
+  background-size: cover;
   background-attachment: fixed;
+  opacity: 0.4;
   color: #0f172a;
 }
-
-/* Page shell helpers */
-a { @apply text-teal-700 hover:text-teal-800; }
-.container { @apply max-w-7xl mx-auto px-4; }
-.card { @apply bg-white/90 backdrop-blur rounded-2xl shadow-lg; }
-
-/* Normalize all form controls */
-label { @apply block text-xs font-semibold text-slate-600 mb-1; }
-input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
-  @apply block w-full rounded-lg border border-slate-300 px-3 py-2
-         focus:outline-none focus:ring-2 focus:ring-teal-700;
-}
-
-/* Primary button */
-button.primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-teal-700
-         text-white px-5 py-2.5 font-semibold hover:bg-teal-800
-         focus:outline-none focus:ring-2 focus:ring-teal-700;
-}
-
-/* Optional: quick visual debug (uncomment to see boxes)
-* { outline: 1px dashed rgba(0,0,0,.05); }
-*/
