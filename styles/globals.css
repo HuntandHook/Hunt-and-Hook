@@ -5,7 +5,7 @@
 /* Background */
 html, body {
   height: 100%;
-  background-image: url('/https://github.com/HuntandHook/Hunt-and-Hook/blob/main/public/Foothills%20Image.png');
+  background-image: url('Foothills Image.png"');
   background-size: cover;
   background-attachment: fixed;
   opacity: 0.95;
