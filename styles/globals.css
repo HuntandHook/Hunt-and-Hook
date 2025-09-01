@@ -2,28 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Background */
+/* 1) Guarantee full-height page */
 html, body {
   height: 100%;
-  background:
-    linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),
-    url('public/Foothills Image.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #f8fafc;
 }
 
-/* Container & cards */
+/* 2) Background image + subtle overlay, unbreakable */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),
+    url('/bg.jpg') center center / cover no-repeat;
+  /* ^ change '/bg.jpg' if your filename is different */
+  filter: none;      /* keep image crisp */
+  opacity: 0.65;        /* reduce to 0.9 if you want more page color to show through */
+}
+
+/* 3) Your common helpers */
+a { @apply text-teal-700 hover:text-teal-800; }
 .container { @apply max-w-7xl mx-auto px-4; }
 .card { @apply bg-white/90 backdrop-blur rounded-2xl shadow-lg; }
 
-/* Form normalization */
+/* 4) Normalize form fields so they line up */
 label { @apply block text-xs font-semibold text-slate-600 mb-1; }
-input, select, textarea {
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
   @apply block w-full rounded-lg border border-slate-300 px-3 py-2
          focus:outline-none focus:ring-2 focus:ring-teal-700;
 }
 
-/* Button */
+/* 5) Primary button */
 button.primary {
   @apply inline-flex items-center justify-center gap-2 rounded-xl bg-teal-700
          text-white px-5 py-2.5 font-semibold hover:bg-teal-800
