@@ -16,7 +16,7 @@ body::before {
   background:
     linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.55)),
     url('/bg.jpg') center center / cover no-repeat;
-  /* ^ change '/bg.jpg' if your filename is different */
+  /* ^ change '/public/Foothills Image.png' if your filename is different */
   filter: none;      /* keep image crisp */
   opacity: 0.65;        /* reduce to 0.9 if you want more page color to show through */
 }
